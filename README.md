@@ -1,6 +1,6 @@
 # YouTube VOD Auto Uploader
 
-This project automates uploading Twitch VODs to YouTube using the YouTube Data API. It is designed to run headlessly on a Debian server (SERVERBOX) and uses OAuth2 authentication for YouTube access.
+This project automates uploading Twitch VODs to YouTube using the YouTube Data API. It is designed to run headlessly on a Debian server and uses OAuth2 authentication for YouTube access.
 
 ---
 
