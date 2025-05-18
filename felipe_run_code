@@ -1,0 +1,32 @@
+#!/bin/bash
+
+ssh -t -i ~/.ssh/ServerBoxKey spraggs@192.168.2.13 <<'EOF'
+
+cd ~/twitchvod || exit 1
+
+if [ -d venv311 ]; then
+    source venv311/bin/activate
+    python get_latest_vod_auto.py
+    python cleanup_mp4s.py
+    deactivate
+else
+    echo "❌ venv311 not found in ~/twitchvod"
+fi
+
+cd ~/twitchvod/mybots || exit 1
+
+if [ -d venv311 ]; then
+    source venv311/bin/activate
+
+    # Only start the tmux session if it's not already running
+    if ! tmux has-session -t mybotsession 2>/dev/null; then
+        tmux new-session -d -s mybotsession 'python3 bot1.py'
+        (sleep 2h && tmux kill-session -t mybotsession) &
+    fi
+
+    deactivate
+else
+    echo "❌ venv311 not found in ~/twitchvod/mybots"
+fi
+
+EOF
