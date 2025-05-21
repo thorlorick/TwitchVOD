@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ssh -t -i ~/.ssh/ServerBoxKey spraggs@192.168.2.13 <<'EOF'
+ssh -t -i ~/.ssh/ServerBoxKey username@1**.1**.*.** <<'EOF'
 
 cd ~/twitchvod || exit 1
 
