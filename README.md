@@ -62,7 +62,7 @@ If it's `null`, revoke app permissions [here](https://myaccount.google.com/permi
 ### 4. Deploy to SERVERBOX
 
 ```bash
-scp client_secret.json token.json spraggs@SERVERBOX:~/twitchvod/
+scp client_secret.json token.json username@SERVERBOX:~/twitchvod/
 ```
 
 ---
