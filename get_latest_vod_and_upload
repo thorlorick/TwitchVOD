@@ -9,13 +9,6 @@ from googleapiclient.http import MediaFileUpload
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 
-# ========== CONFIG ==========
-ACCESS_TOKEN = 'p4aanv1qwd92v42a5epaayn02uet8i'
-CLIENT_ID = 'icf0s3o35shavhv117ga0xsnqgaadx'
-USER_ID = '1281263129'
-SCOPES = ['https://www.googleapis.com/auth/youtube.upload']
-UPLOADED_LOG = "uploaded_vods.txt"
-# =============================
 
 def get_all_recent_vods():
     headers = {
